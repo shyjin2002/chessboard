@@ -7,32 +7,46 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/c707a8bf55.js" crossorigin="anonymous"></script>
     <style>
-        .col {
-            height: 80px;
-            width: 80px;
+        .box {
+            width: 100%;
+            height: 100%;
             border: 1px solid black;
         }
 
         .custom-container {
-            height: 640px;
-            width: 640px;
+
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+            border: 1px solid black;
+
+
         }
-        .black{
+
+        .row1 {
+            display: contents;
+        }
+
+        .black {
             background-color: black;
         }
-        .bl_coin{
+
+        .bl_coin {
             text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
         }
-        .wh_coin{
+
+        .wh_coin {
             text-shadow: 0 0 3px #000000, 0 0 5px #000000;
         }
-        i{
+
+        i {
             font-size: 50px;
         }
-        .col{
+
+        .box {
             display: flex;
-    justify-content: center;
-    align-items: center;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 
@@ -43,87 +57,80 @@
 <body>
     <div class="d-flex justify-content-center">
         <div class="custom-container">
-            <div class="row ">
-                <div class="col"><i class="fa-solid fa-chess-rook bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-knight bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-bishop bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-queen bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-king bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-bishop bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-knight bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-rook bl_coin" style="color: #000000;"></i></div>
+            <div class="row1">
+                <div class="box"><i class="fa-solid fa-chess-rook bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-knight bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-bishop bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-queen bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-king bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-bishop bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-knight bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-rook bl_coin" style="color: #000000;"></i></div>
+
+                <div class="box black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
+
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+                <div class="box black"></div>
+                <div class="box"></div>
+
+                <div class="box"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
+
+                <div class="box black"><i class="fa-solid fa-chess-rook wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-knight wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-bishop wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-queen wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-king wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box"><i class="fa-solid fa-chess-bishop wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box black"><i class="fa-solid fa-chess-knight wh_coin" style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
             </div>
-            <div class="row">
-                <div class="col black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn bl_coin" style="color: #000000;"></i></div>
-            </div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-            </div>
-            <div class="row">
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-            </div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-            </div>
-            <div class="row">
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-                <div class="col black"></div>
-                <div class="col"></div>
-            </div>
-            
-            <div class="row">
-                <div class="col"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-pawn wh_coin" style="color: #ffffff;"></i></div>
-            </div>
-            <div class="row ">
-                <div class="col black"><i class="fa-solid fa-chess-rook wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-knight wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-bishop wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-queen wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-king wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col"><i class="fa-solid fa-chess-bishop wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col black"><i class="fa-solid fa-chess-knight wh_coin" style="color: #ffffff;"></i></div>
-                <div class="col" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_coin" style="color: #ffffff;"></i></div>
-            </div> 
 
 
         </div>
@@ -131,13 +138,12 @@
 
 
     <script>
-        function show(position)
-        {
+        function show(position) {
 
-            let element=document.getElementsByClassName('col');
+            let element = document.getElementsByClassName('col');
             console.log(element[position]);
-            // alert(position);
-            console.log()
+             alert(position);
+            
         }
     </script>
 
