@@ -37,7 +37,7 @@
                         color: black;
                 }
 
-                .wh_coin {
+                .wh_coin,.wh_pawn {
                         text-shadow: 0 0 3px #000000, 0 0 5px #000000;
                         color: white;
                 }
@@ -79,21 +79,21 @@
                                 <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
                                                 style="color: #000000;"></i></div>
 
-                                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn"
+                                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
 
                                 <div class="box" onclick="show(16)"></div>
@@ -131,21 +131,21 @@
                                 <div class="box black" onclick="show(46)"></div>
                                 <div class="box" onclick="show(47)"></div>
 
-                                <div class="box" onclick="show(48)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box" onclick="show(48)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(49)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box black" onclick="show(49)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(50)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box" onclick="show(50)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(51)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box black" onclick="show(51)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(52)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box" onclick="show(52)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(53)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box black" onclick="show(53)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(54)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box" onclick="show(54)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(55)"><i class="fa-solid fa-chess-pawn wh_coin"
+                                <div class="box black" onclick="show(55)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
 
                                 <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_coin"
@@ -183,7 +183,7 @@
                         return element.classList.contains(className);
                 }
                 function show(position) {
-
+                        console.log(position);
                         let element = document.getElementsByClassName('box');
 
                         let parent = element[position];
@@ -195,6 +195,7 @@
                                 if (haschild == 0) {
                                         black = (checkClassName(child, 'bl_coin'));
                                         bl_pawn = (checkClassName(child, 'bl_pawn'));
+                                        wh_pawn = (checkClassName(child, 'wh_pawn'));
                                         white = (checkClassName(child, 'wh_coin'));
                                         temp = position;
                                         childClassName = child.className;
@@ -216,6 +217,21 @@
                                         else if (bl_pawn) {
                                                 if (checkClassName(child, 'wh_coin')) {
                                                         if (position == temp + 9 || position == temp + 7) {
+                                                                console.log(temp);
+                                                                console.log(position);
+                                                                parent.removeChild(parent.firstElementChild);
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+
+                                                }
+                                                else { }
+                                        }
+                                        else if (wh_pawn) {
+                                                if (checkClassName(child, 'bl_coin')) {
+                                                        if (position == temp - 9 || position == temp - 7) {
                                                                 console.log(temp);
                                                                 console.log(position);
                                                                 parent.removeChild(parent.firstElementChild);
@@ -258,6 +274,33 @@
                                                 else {
 
                                                         if (temp + 8 == position) {
+
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                        else if(temp == position){
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                }
+                                        }
+                                        else if (wh_pawn) {
+                                                if (temp >= 48 && temp <= 55) {
+                                                        
+                                                        if (temp - 8 == position || temp - 16 == position) {
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                }
+                                                else {
+
+                                                        if (temp - 8 == position) {
 
                                                                 appendchild = document.createElement("i");
                                                                 appendchild.className = childClassName;
