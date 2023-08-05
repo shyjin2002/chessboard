@@ -37,7 +37,8 @@
                         color: black;
                 }
 
-                .wh_coin,.wh_pawn {
+                .wh_coin,
+                .wh_pawn {
                         text-shadow: 0 0 3px #000000, 0 0 5px #000000;
                         color: white;
                 }
@@ -79,19 +80,23 @@
                                 <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
                                                 style="color: #000000;"></i></div>
 
-                                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                                <div class="box black" onclick="show(8)"><i
+                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
                                 <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                                <div class="box black" onclick="show(10)"><i
+                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
                                 <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                                <div class="box black" onclick="show(12)"><i
+                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
                                 <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                                <div class="box black" onclick="show(14)"><i
+                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
                                 <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
                                                 style="color: #000000;"></i></div>
@@ -133,19 +138,23 @@
 
                                 <div class="box" onclick="show(48)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(49)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                                <div class="box black" onclick="show(49)"><i
+                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
                                 <div class="box" onclick="show(50)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(51)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                                <div class="box black" onclick="show(51)"><i
+                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
                                 <div class="box" onclick="show(52)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(53)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                                <div class="box black" onclick="show(53)"><i
+                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
                                 <div class="box" onclick="show(54)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(55)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                                <div class="box black" onclick="show(55)"><i
+                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                                                 style="color: #ffffff;"></i></div>
 
                                 <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_coin"
@@ -280,7 +289,7 @@
                                                                 parent.appendChild(appendchild);
                                                                 haschild = 0;
                                                         }
-                                                        else if(temp == position){
+                                                        else if (temp == position) {
                                                                 appendchild = document.createElement("i");
                                                                 appendchild.className = childClassName;
                                                                 parent.appendChild(appendchild);
@@ -290,7 +299,7 @@
                                         }
                                         else if (wh_pawn) {
                                                 if (temp >= 48 && temp <= 55) {
-                                                        
+
                                                         if (temp - 8 == position || temp - 16 == position) {
                                                                 appendchild = document.createElement("i");
                                                                 appendchild.className = childClassName;
@@ -307,7 +316,7 @@
                                                                 parent.appendChild(appendchild);
                                                                 haschild = 0;
                                                         }
-                                                        else if(temp == position){
+                                                        else if (temp == position) {
                                                                 appendchild = document.createElement("i");
                                                                 appendchild.className = childClassName;
                                                                 parent.appendChild(appendchild);
