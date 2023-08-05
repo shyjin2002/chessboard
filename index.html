@@ -31,7 +31,8 @@
                         background-color: black;
                 }
 
-                .bl_coin {
+                .bl_coin,
+                .bl_pawn {
                         text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
                         color: black;
                 }
@@ -78,21 +79,21 @@
                                 <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
                                                 style="color: #000000;"></i></div>
 
-                                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_coin"
+                                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn"
                                                 style="color: #000000;"></i></div>
 
                                 <div class="box" onclick="show(16)"></div>
@@ -172,12 +173,13 @@
 
 
         <script>
+
                 let child;
                 let childClassName;
                 let appendchild;
                 let haschild = 0;
                 function checkClassName(element, className) {
-                        
+
                         return element.classList.contains(className);
                 }
                 function show(position) {
@@ -192,9 +194,9 @@
                                 new_childClassName = child.className;
                                 if (haschild == 0) {
                                         black = (checkClassName(child, 'bl_coin'));
-                                        
+                                        bl_pawn = (checkClassName(child, 'bl_pawn'));
                                         white = (checkClassName(child, 'wh_coin'));
-                                        
+                                        temp = position;
                                         childClassName = child.className;
                                         parent.removeChild(parent.firstElementChild);
                                         haschild = 1;
@@ -211,7 +213,22 @@
                                                 }
                                                 else { }
                                         }
-                                        else{
+                                        else if (bl_pawn) {
+                                                if (checkClassName(child, 'wh_coin')) {
+                                                        if (position == temp + 9 || position == temp + 7) {
+                                                                console.log(temp);
+                                                                console.log(position);
+                                                                parent.removeChild(parent.firstElementChild);
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+
+                                                }
+                                                else { }
+                                        }
+                                        else {
                                                 if (checkClassName(child, 'bl_coin')) {
                                                         parent.removeChild(parent.firstElementChild);
                                                         appendchild = document.createElement("i");
@@ -221,18 +238,46 @@
                                                 }
                                                 else { }
                                         }
-
                                 }
-
-
                         }
                         else {
+                                new_child = parent.firstElementChild;
 
                                 if (haschild == 1) {
-                                        appendchild = document.createElement("i");
-                                        appendchild.className = childClassName;
-                                        parent.appendChild(appendchild);
-                                        haschild = 0;
+                                        if (bl_pawn) {
+                                                if (temp >= 8 && temp <= 15) {
+                                                        console.log(temp);
+                                                        console.log(position);
+                                                        if (temp + 8 == position || temp + 16 == position) {
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                }
+                                                else {
+
+                                                        if (temp + 8 == position) {
+
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                        else if(temp == position){
+                                                                appendchild = document.createElement("i");
+                                                                appendchild.className = childClassName;
+                                                                parent.appendChild(appendchild);
+                                                                haschild = 0;
+                                                        }
+                                                }
+                                        }
+                                        else {
+                                                appendchild = document.createElement("i");
+                                                appendchild.className = childClassName;
+                                                parent.appendChild(appendchild);
+                                                haschild = 0;
+                                        }
                                 }
 
                         }
