@@ -2,356 +2,491 @@
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script src="https://kit.fontawesome.com/c707a8bf55.js" crossorigin="anonymous"></script>
-        <style>
-                .box {
-                        width: 100%;
-                        height: 100%;
-                        border: 1px solid black;
-                }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c707a8bf55.js" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
 
-                .custom-container {
+        .custom-container {
 
-                        display: grid;
-                        grid-template-columns: repeat(8, 80px);
-                        grid-template-rows: repeat(8, 80px);
-                        border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+            border: 1px solid black;
 
 
-                }
+        }
 
-                .row1 {
-                        display: contents;
-                }
+        .row1 {
+            display: contents;
+        }
 
-                .black {
-                        background-color: black;
-                }
+        .black {
+            background-color: black;
+        }
 
-                .bl_coin,
-                .bl_pawn {
-                        text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
-                        color: black;
-                }
+        .bl_coin,
+        .bl_pawn {
+            text-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+            color: black;
+        }
 
-                .wh_coin,
-                .wh_pawn {
-                        text-shadow: 0 0 3px #000000, 0 0 5px #000000;
-                        color: white;
-                }
+        .wh_coin,
+        .wh_pawn {
+            text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+            color: white;
+        }
 
-                i {
-                        font-size: 50px;
-                }
+        i {
+            font-size: 50px;
+        }
 
-                .box {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                }
-        </style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-                crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
-        <div class="d-flex justify-content-center">
-                <div class="custom-container">
-                        <div class="row1">
-                                <div class="box" onclick="show(0)"><i class="fa-solid fa-chess-rook bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(1)"><i class="fa-solid fa-chess-knight bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(2)"><i class="fa-solid fa-chess-bishop bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(3)"><i class="fa-solid fa-chess-queen bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(4)"><i class="fa-solid fa-chess-king bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(5)"><i class="fa-solid fa-chess-bishop bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
-                                                style="color: #000000;"></i></div>
-
-                                <div class="box black" onclick="show(8)"><i
-                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(10)"><i
-                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(12)"><i
-                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box black" onclick="show(14)"><i
-                                                class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
-                                                style="color: #000000;"></i></div>
-
-                                <div class="box" onclick="show(16)"></div>
-                                <div class="box black" onclick="show(17)"></div>
-                                <div class="box" onclick="show(18)"></div>
-                                <div class="box black" onclick="show(19)"></div>
-                                <div class="box" onclick="show(20)"></div>
-                                <div class="box black" onclick="show(21)"></div>
-                                <div class="box" onclick="show(22)"></div>
-                                <div class="box black" onclick="show(23)"></div>
-                                <div class="box black" onclick="show(24)"></div>
-                                <div class="box" onclick="show(25)"></div>
-                                <div class="box black" onclick="show(26)"></div>
-                                <div class="box" onclick="show(27)"></div>
-                                <div class="box black" onclick="show(28)"></div>
-                                <div class="box" onclick="show(29)"></div>
-                                <div class="box black" onclick="show(30)"></div>
-                                <div class="box" onclick="show(31)"></div>
-
-                                <div class="box" onclick="show(32)"></div>
-                                <div class="box black" onclick="show(33)"></div>
-                                <div class="box" onclick="show(34)"></div>
-                                <div class="box black" onclick="show(35)"></div>
-                                <div class="box" onclick="show(36)"></div>
-                                <div class="box black" onclick="show(37)"></div>
-                                <div class="box" onclick="show(38)"></div>
-                                <div class="box black" onclick="show(39)"></div>
-
-                                <div class="box black" onclick="show(40)"></div>
-                                <div class="box" onclick="show(41)"></div>
-                                <div class="box black" onclick="show(42)"></div>
-                                <div class="box" onclick="show(43)"></div>
-                                <div class="box black" onclick="show(44)"></div>
-                                <div class="box" onclick="show(45)"></div>
-                                <div class="box black" onclick="show(46)"></div>
-                                <div class="box" onclick="show(47)"></div>
-
-                                <div class="box" onclick="show(48)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(49)"><i
-                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(50)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(51)"><i
-                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(52)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(53)"><i
-                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(54)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(55)"><i
-                                                class="fa-solid fa-chess-pawn wh_pawn wh_coin"
-                                                style="color: #ffffff;"></i></div>
-
-                                <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(57)"><i class="fa-solid fa-chess-knight wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(58)"><i class="fa-solid fa-chess-bishop wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(59)"><i class="fa-solid fa-chess-queen wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black" onclick="show(60)"><i class="fa-solid fa-chess-king wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(61)"><i class="fa-solid fa-chess-bishop wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box black " onclick="show(62)"><i class="fa-solid fa-chess-knight wh_coin"
-                                                style="color: #ffffff;"></i></div>
-                                <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_coin"
-                                                style="color: #ffffff;"></i>
-                                </div>
-                        </div>
-
-
+    <div class="d-flex justify-content-center">
+        <div class="custom-container">
+            <div class="row1">
+                <div class="box" onclick="show(0)"><i class="fa-solid fa-chess-rook bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(1)"><i class="fa-solid fa-chess-knight bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(2)"><i class="fa-solid fa-chess-bishop bl_coin bl_bishop"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(3)"><i class="fa-solid fa-chess-queen bl_coin"
+                        style="color: #000000;"></i>
                 </div>
+                <div class="box" onclick="show(4)"><i class="fa-solid fa-chess-king bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(5)"><i class="fa-solid fa-chess-bishop bl_coin bl_bishop"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_coin "
+                        style="color: #000000;"></i>
+                </div>
+                <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
+                        style="color: #000000;"></i>
+                </div>
+
+                <div class="box black" onclick="show(8)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(9)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(10)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(11)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(12)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(13)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box black" onclick="show(14)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+                <div class="box" onclick="show(15)"><i class="fa-solid fa-chess-pawn bl_pawn bl_coin"
+                        style="color: #000000;"></i></div>
+
+                <div class="box" onclick="show(16)"></div>
+                <div class="box black" onclick="show(17)"></div>
+                <div class="box" onclick="show(18)"></div>
+                <div class="box black" onclick="show(19)"></div>
+                <div class="box" onclick="show(20)"></div>
+                <div class="box black" onclick="show(21)"></div>
+                <div class="box" onclick="show(22)"></div>
+                <div class="box black" onclick="show(23)"></div>
+                <div class="box black" onclick="show(24)"></div>
+                <div class="box" onclick="show(25)"></div>
+                <div class="box black" onclick="show(26)"></div>
+                <div class="box" onclick="show(27)"></div>
+                <div class="box black" onclick="show(28)"></div>
+                <div class="box" onclick="show(29)"></div>
+                <div class="box black" onclick="show(30)"></div>
+                <div class="box" onclick="show(31)"></div>
+
+                <div class="box" onclick="show(32)"></div>
+                <div class="box black" onclick="show(33)"></div>
+                <div class="box" onclick="show(34)"></div>
+                <div class="box black" onclick="show(35)"></div>
+                <div class="box" onclick="show(36)"></div>
+                <div class="box black" onclick="show(37)"></div>
+                <div class="box" onclick="show(38)"></div>
+                <div class="box black" onclick="show(39)"></div>
+
+                <div class="box black" onclick="show(40)"></div>
+                <div class="box" onclick="show(41)"></div>
+                <div class="box black" onclick="show(42)"></div>
+                <div class="box" onclick="show(43)"></div>
+                <div class="box black" onclick="show(44)"></div>
+                <div class="box" onclick="show(45)"></div>
+                <div class="box black" onclick="show(46)"></div>
+                <div class="box" onclick="show(47)"></div>
+
+                <div class="box" onclick="show(48)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box black" onclick="show(49)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(50)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box black" onclick="show(51)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(52)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box black" onclick="show(53)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(54)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box black" onclick="show(55)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
+                        style="color: #ffffff;"></i></div>
+
+                <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="box" onclick="show(57)"><i class="fa-solid fa-chess-knight wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="box black" onclick="show(58)"><i class="fa-solid fa-chess-bishop wh_bishop wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(59)"><i class="fa-solid fa-chess-queen wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="box black" onclick="show(60)"><i class="fa-solid fa-chess-king wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="box" onclick="show(61)"><i class="fa-solid fa-chess-bishop wh_bishop wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box black " onclick="show(62)"><i class="fa-solid fa-chess-knight wh_coin"
+                        style="color: #ffffff;"></i></div>
+                <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_coin"
+                        style="color: #ffffff;"></i>
+                </div>
+            </div>
+
+
         </div>
+    </div>
 
 
-        <script>
+    <script>
 
-                let child;
-                let childClassName;
-                let appendchild;
-                let haschild = 0;
-                function checkClassName(element, className) {
+        let child;
+        let childClassName;
+        let appendchild;
+        let haschild = 0;
+        let temp_blank_arr = new Array();
+        let temp_child_arr = new Array();
 
-                        return element.classList.contains(className);
+        function checkClassName(element, className) {
+
+            return element.classList.contains(className);
+        }
+        function show(position) {
+            console.log(position);
+            let element = document.getElementsByClassName('box');
+
+            let parent = element[position];
+
+            let i = 0;
+
+
+
+            if (parent.hasChildNodes()) {
+                child = parent.firstElementChild;
+                new_childClassName = child.className;
+                if (haschild == 0) {
+                    black = (checkClassName(child, 'bl_coin'));
+                    bl_pawn = (checkClassName(child, 'bl_pawn'));
+                    bl_bishop = (checkClassName(child, 'bl_bishop'));
+                    wh_bishop = (checkClassName(child, 'wh_bishop'));
+                    bishop = (checkClassName(child, 'fa-chess-bishop'));
+                    wh_pawn = (checkClassName(child, 'wh_pawn'));
+                    white = (checkClassName(child, 'wh_coin'));
+                    temp = position;
+                    childClassName = child.className;
+                    parent.removeChild(parent.firstElementChild);
+                    haschild = 1;
+                    temp_child_arr = [];
+                    temp_blank_arr = [];
+                    if (bishop) {
+                        move = temp;
+
+                        while (temp != 0 && temp != 1 && temp != 2 && temp != 3 && temp != 4 && temp != 5 && temp != 6 && temp != 7 && temp != 15 && temp != 23 && temp != 31 && temp != 39 && temp != 47 && temp != 55 && temp != 63) {
+
+                            temp = temp - 7;
+
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+
+                        while (temp != 56 && temp != 57 && temp != 58 && temp != 59 && temp != 60 && temp != 61 && temp != 62 && temp != 7 && temp != 15 && temp != 23 && temp != 31 && temp != 39 && temp != 47 && temp != 55 && temp != 63) {
+                            temp = temp + 9;
+
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                        while (temp != 8 && temp != 16 && temp != 24 && temp != 32 && temp != 40 && temp != 48 && temp != 56 && temp != 0 && temp != 1 && temp != 2 && temp != 3 && temp != 4 && temp != 5 && temp != 6 && temp != 7) {
+                            temp = temp - 9;
+
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                        while (temp != 0 && temp != 8 && temp != 16 && temp != 24 && temp != 32 && temp != 40 && temp != 48 && temp != 56 && temp != 57 && temp != 58 && temp != 59 && temp != 60 && temp != 61 && temp != 62 && temp != 63) {
+                            temp = temp + 7;
+
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+
+                        temp = move;
+                        console.log(temp_blank_arr);
+                        console.log(temp_child_arr);
+                        console.log("length:" + temp_child_arr.length);
+
+                    }
+
                 }
-                function show(position) {
-                        console.log(position);
-                        let element = document.getElementsByClassName('box');
 
-                        let parent = element[position];
+                else {
 
 
-                        if (parent.hasChildNodes()) {
-                                child = parent.firstElementChild;
-                                new_childClassName = child.className;
-                                if (haschild == 0) {
-                                        black = (checkClassName(child, 'bl_coin'));
-                                        bl_pawn = (checkClassName(child, 'bl_pawn'));
-                                        wh_pawn = (checkClassName(child, 'wh_pawn'));
-                                        white = (checkClassName(child, 'wh_coin'));
-                                        temp = position;
-                                        childClassName = child.className;
-                                        parent.removeChild(parent.firstElementChild);
-                                        haschild = 1;
+
+                    if (bl_pawn) {
+                        if (checkClassName(child, 'wh_coin')) {
+                            if (position == temp + 9 || position == temp + 7) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+
+                        }
+                        else { }
+                    }
+                    else if (bl_bishop) {
+                        if (checkClassName(child, 'wh_coin')) {
+                            console.log(temp_child_arr.length);
+                            for (i = 0; i < temp_child_arr.length; i++) {
+                                console.log(temp_child_arr[i]);
+                                if (temp_child_arr[i] == position) {
+                                    parent.removeChild(parent.firstElementChild);
+                                    appendchild = document.createElement("i");
+                                    appendchild.className = childClassName;
+                                    parent.appendChild(appendchild);
+                                    haschild = 0;
                                 }
+                            }
+                        }
 
-                                else {
-                                        if (black) {
-                                                if (checkClassName(child, 'wh_coin')) {
-                                                        parent.removeChild(parent.firstElementChild);
-                                                        appendchild = document.createElement("i");
-                                                        appendchild.className = childClassName;
-                                                        parent.appendChild(appendchild);
-                                                        haschild = 0;
-                                                }
-                                                else { }
-                                        }
-                                        else if (bl_pawn) {
-                                                if (checkClassName(child, 'wh_coin')) {
-                                                        if (position == temp + 9 || position == temp + 7) {
-                                                                console.log(temp);
-                                                                console.log(position);
-                                                                parent.removeChild(parent.firstElementChild);
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-
-                                                }
-                                                else { }
-                                        }
-                                        else if (wh_pawn) {
-                                                if (checkClassName(child, 'bl_coin')) {
-                                                        if (position == temp - 9 || position == temp - 7) {
-                                                                console.log(temp);
-                                                                console.log(position);
-                                                                parent.removeChild(parent.firstElementChild);
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-
-                                                }
-                                                else { }
-                                        }
-                                        else {
-                                                if (checkClassName(child, 'bl_coin')) {
-                                                        parent.removeChild(parent.firstElementChild);
-                                                        appendchild = document.createElement("i");
-                                                        appendchild.className = childClassName;
-                                                        parent.appendChild(appendchild);
-                                                        haschild = 0;
-                                                }
-                                                else { }
-                                        }
+                    }
+                    else if (wh_bishop) {
+                        if (checkClassName(child, 'bl_coin')) {
+                            console.log(temp_child_arr.length);
+                            for (i = 0; i < temp_child_arr.length; i++) {
+                                console.log(temp_child_arr[i]);
+                                if (temp_child_arr[i] == position) {
+                                    parent.removeChild(parent.firstElementChild);
+                                    appendchild = document.createElement("i");
+                                    appendchild.className = childClassName;
+                                    parent.appendChild(appendchild);
+                                    haschild = 0;
                                 }
+                            }
+                        }
+
+                    }
+
+                    else if (wh_pawn) {
+                        if (checkClassName(child, 'bl_coin')) {
+                            if (position == temp - 9 || position == temp - 7) {
+
+                                parent.removeChild(parent.firstElementChild);
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+
+                        }
+                        else { }
+                    }
+                    else {
+                        if (checkClassName(child, 'bl_coin')) {
+
+                            parent.removeChild(parent.firstElementChild);
+                            appendchild = document.createElement("i");
+                            appendchild.className = childClassName;
+                            parent.appendChild(appendchild);
+                            haschild = 0;
+                        }
+                        else { }
+                    }
+                }
+            }
+            else {
+                new_child = parent.firstElementChild;
+
+                if (haschild == 1) {
+                    if (bl_pawn) {
+                        if (temp >= 8 && temp <= 15) {
+                            console.log(temp);
+                            console.log(position);
+                            if (temp + 8 == position || temp + 16 == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                            else if (temp == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
                         }
                         else {
-                                new_child = parent.firstElementChild;
 
-                                if (haschild == 1) {
-                                        if (bl_pawn) {
-                                                if (temp >= 8 && temp <= 15) {
-                                                        console.log(temp);
-                                                        console.log(position);
-                                                        if (temp + 8 == position || temp + 16 == position) {
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                }
-                                                else {
+                            if (temp + 8 == position) {
 
-                                                        if (temp + 8 == position) {
-
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                        else if (temp == position) {
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                }
-                                        }
-                                        else if (wh_pawn) {
-                                                if (temp >= 48 && temp <= 55) {
-
-                                                        if (temp - 8 == position || temp - 16 == position) {
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                }
-                                                else {
-
-                                                        if (temp - 8 == position) {
-
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                        else if (temp == position) {
-                                                                appendchild = document.createElement("i");
-                                                                appendchild.className = childClassName;
-                                                                parent.appendChild(appendchild);
-                                                                haschild = 0;
-                                                        }
-                                                }
-                                        }
-                                        else {
-                                                appendchild = document.createElement("i");
-                                                appendchild.className = childClassName;
-                                                parent.appendChild(appendchild);
-                                                haschild = 0;
-                                        }
-                                }
-
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                            else if (temp == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
                         }
+                    }
+                    else if (bl_bishop) {
+
+                        for (i = 0; i < temp_blank_arr.length; i++) {
+
+                            if (temp_blank_arr[i] == position) {
+
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
+                    }
+                    else if (wh_bishop) {
+
+                        for (i = 0; i < temp_blank_arr.length; i++) {
+
+                            if (temp_blank_arr[i] == position) {
+
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
+                    }
 
 
+                    else if (wh_pawn) {
+                        if (temp >= 48 && temp <= 55) {
 
+                            if (temp - 8 == position || temp - 16 == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                            else if (temp == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
+                        else {
 
+                            if (temp - 8 == position) {
 
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                            else if (temp == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
+                    }
+                    else {
+                        appendchild = document.createElement("i");
+                        appendchild.className = childClassName;
+                        parent.appendChild(appendchild);
+                        haschild = 0;
+                    }
                 }
 
+            }
 
 
 
 
 
-        </script>
+        }
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-                crossorigin="anonymous"></script>
+
+
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
