@@ -75,7 +75,7 @@
                                                 style="color: #000000;"></i></div>
                                 <div class="box black" onclick="show(5)"><i class="fa-solid fa-chess-bishop bl_coin"
                                                 style="color: #000000;"></i></div>
-                                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_coin"
+                                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_knight bl_coin"
                                                 style="color: #000000;"></i></div>
                                 <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
                                                 style="color: #000000;"></i></div>
@@ -206,6 +206,7 @@
                                         bl_pawn = (checkClassName(child, 'bl_pawn'));
                                         wh_pawn = (checkClassName(child, 'wh_pawn'));
                                         white = (checkClassName(child, 'wh_coin'));
+                                        bl_knight=(checkClassName(child,'bl_knight'))
                                         temp = position;
                                         childClassName = child.className;
                                         parent.removeChild(parent.firstElementChild);
@@ -213,28 +214,33 @@
                                 }
 
                                 else {
-                                        if (black) {
-                                                if (checkClassName(child, 'wh_coin')) {
-                                                        parent.removeChild(parent.firstElementChild);
-                                                        appendchild = document.createElement("i");
-                                                        appendchild.className = childClassName;
-                                                        parent.appendChild(appendchild);
-                                                        haschild = 0;
-                                                }
-                                                else { }
-                                        }
-                                        else if (bl_pawn) {
+                                        
+                                        if (bl_pawn) {
                                                 if (checkClassName(child, 'wh_coin')) {
                                                         if (position == temp + 9 || position == temp + 7) {
-                                                                console.log(temp);
-                                                                console.log(position);
+
                                                                 parent.removeChild(parent.firstElementChild);
                                                                 appendchild = document.createElement("i");
                                                                 appendchild.className = childClassName;
                                                                 parent.appendChild(appendchild);
                                                                 haschild = 0;
                                                         }
+                                                        else {
+                                                                console.log("you can't cut me bro");
+                                                        }
+                                                }
 
+                                        }
+                                        else if(bl_knight){
+                                                
+                                        }
+                                        else if (black) {
+                                                if (checkClassName(child, 'wh_coin')) {
+                                                        parent.removeChild(parent.firstElementChild);
+                                                        appendchild = document.createElement("i");
+                                                        appendchild.className = childClassName;
+                                                        parent.appendChild(appendchild);
+                                                        haschild = 0;
                                                 }
                                                 else { }
                                         }
@@ -249,9 +255,12 @@
                                                                 parent.appendChild(appendchild);
                                                                 haschild = 0;
                                                         }
+                                                        else {
+                                                                console.log("you can't cut me bro");
+                                                        }
 
                                                 }
-                                                else { }
+
                                         }
                                         else {
                                                 if (checkClassName(child, 'bl_coin')) {
