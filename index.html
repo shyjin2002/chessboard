@@ -62,7 +62,7 @@
     <div class="d-flex justify-content-center">
         <div class="custom-container">
             <div class="row1">
-                <div class="box" onclick="show(0)"><i class="fa-solid fa-chess-rook bl_coin"
+                <div class="box" onclick="show(0)"><i class="fa-solid fa-chess-rook bl_rook bl_coin"
                         style="color: #000000;"></i></div>
                 <div class="box black" onclick="show(1)"><i class="fa-solid fa-chess-knight bl_coin"
                         style="color: #000000;"></i></div>
@@ -78,7 +78,7 @@
                 <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_coin "
                         style="color: #000000;"></i>
                 </div>
-                <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_coin"
+                <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_rook bl_coin"
                         style="color: #000000;"></i>
                 </div>
 
@@ -151,7 +151,7 @@
                 <div class="box black" onclick="show(55)"><i class="fa-solid fa-chess-pawn wh_pawn wh_coin"
                         style="color: #ffffff;"></i></div>
 
-                <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_coin"
+                <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_rook wh_coin"
                         style="color: #ffffff;"></i>
                 </div>
                 <div class="box" onclick="show(57)"><i class="fa-solid fa-chess-knight wh_coin"
@@ -169,39 +169,26 @@
                         style="color: #ffffff;"></i></div>
                 <div class="box black " onclick="show(62)"><i class="fa-solid fa-chess-knight wh_coin"
                         style="color: #ffffff;"></i></div>
-                <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_coin"
+                <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_rook wh_coin"
                         style="color: #ffffff;"></i>
                 </div>
             </div>
-
-
         </div>
     </div>
-
-
     <script>
-
         let child;
         let childClassName;
         let appendchild;
         let haschild = 0;
         let temp_blank_arr = new Array();
         let temp_child_arr = new Array();
-
         function checkClassName(element, className) {
-
             return element.classList.contains(className);
         }
         function show(position) {
-            console.log(position);
             let element = document.getElementsByClassName('box');
-
             let parent = element[position];
-
             let i = 0;
-
-
-
             if (parent.hasChildNodes()) {
                 child = parent.firstElementChild;
                 new_childClassName = child.className;
@@ -213,13 +200,65 @@
                     bishop = (checkClassName(child, 'fa-chess-bishop'));
                     wh_pawn = (checkClassName(child, 'wh_pawn'));
                     white = (checkClassName(child, 'wh_coin'));
+                    rook = (checkClassName(child, 'fa-chess-rook'));
+                    bl_rook = (checkClassName(child, 'bl_rook'));
+                    wh_rook = (checkClassName(child, 'wh_rook'));
                     temp = position;
                     childClassName = child.className;
                     parent.removeChild(parent.firstElementChild);
                     haschild = 1;
                     temp_child_arr = [];
                     temp_blank_arr = [];
-                    if (bishop) {
+                    if (rook) {
+                        move = temp;
+                        temp_blank_arr[i] = temp;
+                        i++;
+                        while (temp != 0 && temp != 1 && temp != 2 && temp != 3 && temp != 4 && temp != 5 && temp != 6 && temp != 7) {
+                            temp = temp - 8;
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                        while (temp != 56 && temp != 57 && temp != 58 && temp != 59 && temp != 60 && temp != 61 && temp != 62 && temp != 63) {
+                            temp = temp + 8;
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                        while (temp != 0 && temp != 8 && temp != 16 && temp != 24 && temp != 32 && temp != 40 && temp != 48 && temp != 56) {
+                            temp = temp - 1;
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                        while (temp != 7 && temp != 15 && temp != 23 && temp != 31 && temp != 39 && temp != 47 && temp != 55 && temp != 63) {
+                            temp = temp + 1;
+                            if (element[temp].hasChildNodes()) {
+                                temp_child_arr[i] = temp;
+                                i++;
+                                break;
+                            }
+                            temp_blank_arr[i] = temp;
+                            i++;
+                        }
+                        temp = move;
+                    }
+                    else if (bishop) {
                         move = temp;
                         temp_blank_arr[i] = temp;
                         i++;
@@ -236,10 +275,8 @@
                             i++;
                         }
                         temp = move;
-
                         while (temp != 56 && temp != 57 && temp != 58 && temp != 59 && temp != 60 && temp != 61 && temp != 62 && temp != 7 && temp != 15 && temp != 23 && temp != 31 && temp != 39 && temp != 47 && temp != 55 && temp != 63) {
                             temp = temp + 9;
-
                             if (element[temp].hasChildNodes()) {
                                 temp_child_arr[i] = temp;
                                 i++;
@@ -273,20 +310,9 @@
                             i++;
                         }
                         temp = move;
-
-                        temp = move;
-                        console.log(temp_blank_arr);
-                        console.log(temp_child_arr);
-                        console.log("length:" + temp_child_arr.length);
-
                     }
-
                 }
-
                 else {
-
-
-
                     if (bl_pawn) {
                         if (checkClassName(child, 'wh_coin')) {
                             if (position == temp + 9 || position == temp + 7) {
@@ -297,15 +323,45 @@
                                 parent.appendChild(appendchild);
                                 haschild = 0;
                             }
-
                         }
                         else { }
                     }
+                    else if (bl_rook) {
+                        if (checkClassName(child, 'wh_coin')) {
+                            for (i = 0; i < temp_child_arr.length; i++) {
+
+                                if (temp_child_arr[i] == position) {
+                                    parent.removeChild(parent.firstElementChild);
+                                    appendchild = document.createElement("i");
+                                    appendchild.className = childClassName;
+                                    parent.appendChild(appendchild);
+                                    haschild = 0;
+                                }
+                            }
+                        }
+
+                    }
+                    else if (wh_rook) {
+                        if (checkClassName(child, 'bl_coin')) {
+
+                            for (i = 0; i < temp_child_arr.length; i++) {
+
+                                if (temp_child_arr[i] == position) {
+                                    parent.removeChild(parent.firstElementChild);
+                                    appendchild = document.createElement("i");
+                                    appendchild.className = childClassName;
+                                    parent.appendChild(appendchild);
+                                    haschild = 0;
+                                }
+                            }
+                        }
+
+                    }
                     else if (bl_bishop) {
                         if (checkClassName(child, 'wh_coin')) {
-                            console.log(temp_child_arr.length);
+
                             for (i = 0; i < temp_child_arr.length; i++) {
-                                console.log(temp_child_arr[i]);
+
                                 if (temp_child_arr[i] == position) {
                                     parent.removeChild(parent.firstElementChild);
                                     appendchild = document.createElement("i");
@@ -319,9 +375,9 @@
                     }
                     else if (wh_bishop) {
                         if (checkClassName(child, 'bl_coin')) {
-                            console.log(temp_child_arr.length);
+
                             for (i = 0; i < temp_child_arr.length; i++) {
-                                console.log(temp_child_arr[i]);
+
                                 if (temp_child_arr[i] == position) {
                                     parent.removeChild(parent.firstElementChild);
                                     appendchild = document.createElement("i");
@@ -367,8 +423,7 @@
                 if (haschild == 1) {
                     if (bl_pawn) {
                         if (temp >= 8 && temp <= 15) {
-                            console.log(temp);
-                            console.log(position);
+
                             if (temp + 8 == position || temp + 16 == position) {
                                 appendchild = document.createElement("i");
                                 appendchild.className = childClassName;
@@ -392,6 +447,20 @@
                                 haschild = 0;
                             }
                             else if (temp == position) {
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
+                    }
+
+                    else if (rook) {
+
+                        for (i = 0; i < temp_blank_arr.length; i++) {
+
+                            if (temp_blank_arr[i] == position) {
+
                                 appendchild = document.createElement("i");
                                 appendchild.className = childClassName;
                                 parent.appendChild(appendchild);
