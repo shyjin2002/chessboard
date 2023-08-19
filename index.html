@@ -181,10 +181,16 @@
         }
         function show(position) {
             let element = document.getElementsByClassName('box');
+            let white = document.getElementsByClassName('white');
+            let black = document.getElementsByClassName('black');
             let parent = element[position];
-            parent.style.backgroundColor = 'lightblue';
+            for (let i = 0; i < white.length; i++) {
+                white[i].style.backgroundColor = 'white';
+            } for (let i = 0; i < black.length; i++) {
+                black[i].style.backgroundColor = 'black';
+            }
             let i = 0;
-            
+
             if (parent.hasChildNodes()) {
                 child = parent.firstElementChild;
                 new_childClassName = child.className;
@@ -259,8 +265,8 @@
                             i++;
                         }
                         temp = move;
-                        for(i=0;i<length.temp_blank_arr;i++){
-
+                        for (let j = 0; j < temp_blank_arr.length; j++) {
+                            element[temp_blank_arr[j]].style.backgroundColor = 'lightblue';
                         }
                     }
                     else if (king) {
