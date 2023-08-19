@@ -184,11 +184,7 @@
             let white = document.getElementsByClassName('white');
             let black = document.getElementsByClassName('black');
             let parent = element[position];
-            for (let i = 0; i < white.length; i++) {
-                white[i].style.backgroundColor = 'white';
-            } for (let i = 0; i < black.length; i++) {
-                black[i].style.backgroundColor = 'black';
-            }
+            
             let i = 0;
 
             if (parent.hasChildNodes()) {
@@ -211,6 +207,7 @@
                     queen = (checkClassName(child, 'fa-chess-queen'));
                     bl_queen = (checkClassName(child, 'bl_queen'));
                     wh_queen = (checkClassName(child, 'wh_queen'));
+                    knight=(checkClassName(child, 'fa-chess-knight'));
                     temp = position;
                     childClassName = child.className;
                     parent.removeChild(parent.firstElementChild);
@@ -267,6 +264,20 @@
                         temp = move;
                         for (let j = 0; j < temp_blank_arr.length; j++) {
                             element[temp_blank_arr[j]].style.backgroundColor = 'lightblue';
+                        }
+                    }
+                    else if (knight){
+                        let knight=new Array();
+                        start=0;
+                        for(i=0;i<8;i++){
+                            knight[i] = [];
+                            for(let j=10;j<18;j++){
+                                knight[i][j]=element[start];
+                                start++;
+                                console.log(knight[0][10]);
+                                console.log(element[63]);
+                                
+                            }
                         }
                     }
                     else if (king) {
