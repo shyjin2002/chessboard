@@ -64,7 +64,7 @@
             <div class="row1">
                 <div class="box" onclick="show(0)"><i class="fa-solid fa-chess-rook bl_rook bl_coin"
                         style="color: #000000;"></i></div>
-                <div class="box black" onclick="show(1)"><i class="fa-solid fa-chess-knight bl_coin"
+                <div class="box black" onclick="show(1)"><i class="fa-solid fa-chess-knight bl_knight bl_coin"
                         style="color: #000000;"></i></div>
                 <div class="box" onclick="show(2)"><i class="fa-solid fa-chess-bishop bl_coin bl_bishop"
                         style="color: #000000;"></i></div>
@@ -74,7 +74,7 @@
                         style="color: #000000;"></i></div>
                 <div class="box black" onclick="show(5)"><i class="fa-solid fa-chess-bishop bl_coin bl_bishop"
                         style="color: #000000;"></i></div>
-                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_coin "
+                <div class="box" onclick="show(6)"><i class="fa-solid fa-chess-knight bl_knight bl_coin "
                         style="color: #000000;"></i></div>
                 <div class="box black" onclick="show(7)"><i class="fa-solid fa-chess-rook bl_rook bl_coin"
                         style="color: #000000;"></i></div>
@@ -149,7 +149,7 @@
                         style="color: #ffffff;"></i></div>
                 <div class="box black" onclick="show(56)"><i class="fa-solid fa-chess-rook wh_rook wh_coin"
                         style="color: #ffffff;"></i></div>
-                <div class="box" onclick="show(57)"><i class="fa-solid fa-chess-knight wh_coin"
+                <div class="box" onclick="show(57)"><i class="fa-solid fa-chess-knight wh_knight wh_coin"
                         style="color: #ffffff;"></i></div>
                 <div class="box black" onclick="show(58)"><i class="fa-solid fa-chess-bishop wh_bishop wh_coin"
                         style="color: #ffffff;"></i></div>
@@ -159,7 +159,7 @@
                         style="color: #ffffff;"></i></div>
                 <div class="box" onclick="show(61)"><i class="fa-solid fa-chess-bishop wh_bishop wh_coin"
                         style="color: #ffffff;"></i></div>
-                <div class="box black " onclick="show(62)"><i class="fa-solid fa-chess-knight wh_coin"
+                <div class="box black " onclick="show(62)"><i class="fa-solid fa-chess-knight wh_knight wh_coin"
                         style="color: #ffffff;"></i></div>
                 <div class="box" onclick="show(63)"><i class="fa-solid fa-chess-rook wh_rook wh_coin"
                         style="color: #ffffff;"></i></div>
@@ -206,6 +206,8 @@
                     bl_queen = (checkClassName(child, 'bl_queen'));
                     wh_queen = (checkClassName(child, 'wh_queen'));
                     knight = (checkClassName(child, 'fa-chess-knight'));
+                    bl_knight = (checkClassName(child, 'bl_knight'));
+                    wh_knight = (checkClassName(child, 'wh_knight'));
                     temp = position;
                     childClassName = child.className;
                     parent.removeChild(parent.firstElementChild);
@@ -260,9 +262,7 @@
                             i++;
                         }
                         temp = move;
-                        for (let j = 0; j < temp_blank_arr.length; j++) {
-                            element[temp_blank_arr[j]].style.backgroundColor = 'lightblue';
-                        }
+                        
                     }
                     else if (knight) {
                         let knight = new Array();
@@ -280,11 +280,13 @@
                             }
                         }
                         count = 1;
-                        temp_blank_arr[0] = knight[temp_i][temp_j]
+                        temp_blank_arr[0] = knight[temp_i][temp_j];
+                         
                         for (i = 0; i < 8; i++) {
 
                             for (let j = 10; j < 18; j++) {
-
+                        
+                               
                                 if (Math.abs(temp_i - i) == 2 && Math.abs(temp_j - j) == 1) {
                                     if (element[knight[i][j]].hasChildNodes()) {
                                         temp_child_arr[count] = knight[i][j];
@@ -292,7 +294,7 @@
 
                                     }
                                     else {
-                                        temp_blank_arr[i] = knight[i][j];
+                                        temp_blank_arr[count] = knight[i][j];
                                         count++;
                                     }
 
@@ -312,8 +314,8 @@
                                 }
                             }
                         }
-                        console.log(temp_blank_arr);
-                        console.log(temp_child_arr);
+                       
+                       
                     }
                     else if (king) {
                         move = temp;
@@ -566,6 +568,8 @@
                         }
                         temp = move;
                     }
+                     console.log(temp_blank_arr);
+                        console.log(temp_child_arr);
                 }
                 else {
                     if (bl_pawn) {
@@ -581,38 +585,7 @@
                         }
                         else { }
                     }
-                    else if (bl_rook) {
-                        if (checkClassName(child, 'wh_coin')) {
-                            for (i = 0; i < temp_child_arr.length; i++) {
-
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
-
-                    }
-                    else if (wh_rook) {
-                        if (checkClassName(child, 'bl_coin')) {
-
-                            for (i = 0; i < temp_child_arr.length; i++) {
-
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
-
-                    }
-                    else if (bl_bishop) {
+                      else if (bl_bishop || bl_knight||bl_rook ||bl_king||bl_queen) {
                         if (checkClassName(child, 'wh_coin')) {
 
                             for (i = 0; i < temp_child_arr.length; i++) {
@@ -628,23 +601,7 @@
                         }
 
                     }
-                    else if (bl_king) {
-                        if (checkClassName(child, 'wh_coin')) {
-
-                            for (i = 0; i < temp_child_arr.length; i++) {
-
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
-
-                    }
-                    else if (wh_king) {
+                    else if (wh_bishop || wh_knight||wh_rook ||wh_king||wh_queen) {
                         if (checkClassName(child, 'bl_coin')) {
 
                             for (i = 0; i < temp_child_arr.length; i++) {
@@ -660,55 +617,104 @@
                         }
 
                     }
-                    else if (bl_queen) {
-                        if (checkClassName(child, 'wh_coin')) {
+                    // else if (bl_rook) {
+                    //     if (checkClassName(child, 'wh_coin')) {
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
 
-                            for (i = 0; i < temp_child_arr.length; i++) {
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
 
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
+                    // }
+                    // else if (wh_rook) {
+                    //     if (checkClassName(child, 'bl_coin')) {
 
-                    }
-                    else if (wh_queen) {
-                        if (checkClassName(child, 'bl_coin')) {
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
 
-                            for (i = 0; i < temp_child_arr.length; i++) {
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
 
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
+                    // }
+                  
+                    // else if (bl_king) {
+                    //     if (checkClassName(child, 'wh_coin')) {
 
-                    }
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
 
-                    else if (wh_bishop) {
-                        if (checkClassName(child, 'bl_coin')) {
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
 
-                            for (i = 0; i < temp_child_arr.length; i++) {
+                    // }
+                    // else if (wh_king) {
+                    //     if (checkClassName(child, 'bl_coin')) {
 
-                                if (temp_child_arr[i] == position) {
-                                    parent.removeChild(parent.firstElementChild);
-                                    appendchild = document.createElement("i");
-                                    appendchild.className = childClassName;
-                                    parent.appendChild(appendchild);
-                                    haschild = 0;
-                                }
-                            }
-                        }
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
 
-                    }
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
+
+                    // }
+                    // else if (bl_queen) {
+                    //     if (checkClassName(child, 'wh_coin')) {
+
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
+
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
+
+                    // }
+                    // else if (wh_queen) {
+                    //     if (checkClassName(child, 'bl_coin')) {
+
+                    //         for (i = 0; i < temp_child_arr.length; i++) {
+
+                    //             if (temp_child_arr[i] == position) {
+                    //                 parent.removeChild(parent.firstElementChild);
+                    //                 appendchild = document.createElement("i");
+                    //                 appendchild.className = childClassName;
+                    //                 parent.appendChild(appendchild);
+                    //                 haschild = 0;
+                    //             }
+                    //         }
+                    //     }
+
+                    // }
+
+                    
 
                     else if (wh_pawn) {
                         if (checkClassName(child, 'bl_coin')) {
@@ -774,62 +780,6 @@
                             }
                         }
                     }
-
-                    else if (rook) {
-
-                        for (i = 0; i < temp_blank_arr.length; i++) {
-
-                            if (temp_blank_arr[i] == position) {
-
-                                appendchild = document.createElement("i");
-                                appendchild.className = childClassName;
-                                parent.appendChild(appendchild);
-                                haschild = 0;
-                            }
-                        }
-                    }
-                    else if (queen) {
-
-                        for (i = 0; i < temp_blank_arr.length; i++) {
-
-                            if (temp_blank_arr[i] == position) {
-
-                                appendchild = document.createElement("i");
-                                appendchild.className = childClassName;
-                                parent.appendChild(appendchild);
-                                haschild = 0;
-                            }
-                        }
-                    }
-                    else if (king) {
-
-                        for (i = 0; i < temp_blank_arr.length; i++) {
-
-                            if (temp_blank_arr[i] == position) {
-
-                                appendchild = document.createElement("i");
-                                appendchild.className = childClassName;
-                                parent.appendChild(appendchild);
-                                haschild = 0;
-                            }
-                        }
-                    }
-                    else if (bishop) {
-
-                        for (i = 0; i < temp_blank_arr.length; i++) {
-
-                            if (temp_blank_arr[i] == position) {
-
-                                appendchild = document.createElement("i");
-                                appendchild.className = childClassName;
-                                parent.appendChild(appendchild);
-                                haschild = 0;
-                            }
-                        }
-                    }
-
-
-
                     else if (wh_pawn) {
                         if (temp >= 48 && temp <= 55) {
 
@@ -863,12 +813,65 @@
                             }
                         }
                     }
-                    else {
-                        appendchild = document.createElement("i");
-                        appendchild.className = childClassName;
-                        parent.appendChild(appendchild);
-                        haschild = 0;
+                    else if (bishop||king||knight||queen||rook) {
+
+                        for (i = 0; i < temp_blank_arr.length; i++) {
+
+                            if (temp_blank_arr[i] == position) {
+
+                                appendchild = document.createElement("i");
+                                appendchild.className = childClassName;
+                                parent.appendChild(appendchild);
+                                haschild = 0;
+                            }
+                        }
                     }
+
+                    // else if (rook) {
+
+                    //     for (i = 0; i < temp_blank_arr.length; i++) {
+
+                    //         if (temp_blank_arr[i] == position) {
+
+                    //             appendchild = document.createElement("i");
+                    //             appendchild.className = childClassName;
+                    //             parent.appendChild(appendchild);
+                    //             haschild = 0;
+                    //         }
+                    //     }
+                    // }
+                    // else if (queen) {
+
+                    //     for (i = 0; i < temp_blank_arr.length; i++) {
+
+                    //         if (temp_blank_arr[i] == position) {
+
+                    //             appendchild = document.createElement("i");
+                    //             appendchild.className = childClassName;
+                    //             parent.appendChild(appendchild);
+                    //             haschild = 0;
+                    //         }
+                    //     }
+                    // }
+                    // else if (king) {
+
+                    //     for (i = 0; i < temp_blank_arr.length; i++) {
+
+                    //         if (temp_blank_arr[i] == position) {
+
+                    //             appendchild = document.createElement("i");
+                    //             appendchild.className = childClassName;
+                    //             parent.appendChild(appendchild);
+                    //             haschild = 0;
+                    //         }
+                    //     }
+                    // }
+                    
+
+
+
+                    
+                    
                 }
 
             }
