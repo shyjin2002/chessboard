@@ -286,7 +286,7 @@
                             for (let j = 10; j < 18; j++) {
 
                                 if (Math.abs(temp_i - i) == 2 && Math.abs(temp_j - j) == 1) {
-                                    if (knight[i][j].hasChildNodes()) {
+                                    if (element[knight[i][j]].hasChildNodes()) {
                                         temp_child_arr[count] = knight[i][j];
                                         count++;
 
@@ -298,7 +298,7 @@
 
                                 }
                                 if (Math.abs(temp_i - i) == 1 && Math.abs(temp_j - j) == 2) {
-                                    if (knight[i][j].hasChildNodes()) {
+                                    if (element[knight[i][j]].hasChildNodes()) {
                                         temp_child_arr[count] = knight[i][j];
                                         count++;
 
