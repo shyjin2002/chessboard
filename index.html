@@ -12,12 +12,19 @@
             height: 100%;
             border: 1px solid black;
         }
+        body{
+            height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        }
 
         .custom-container {
 
             display: grid;
-            grid-template-columns: repeat(8, 80px);
-            grid-template-rows: repeat(8, 80px);
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
             border: 1px solid black;
 
 
@@ -44,7 +51,7 @@
         }
 
         i {
-            font-size: 50px;
+            font-size: 30px;
         }
 
         .box {
@@ -68,11 +75,36 @@ i {
 }
     </style>
 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhyRg7jZ1Lm4SfQYG-Z4K2FP8f0E_4Ezg",
+      authDomain: "chess-board-cf39c.firebaseapp.com",
+      projectId: "chess-board-cf39c",
+      storageBucket: "chess-board-cf39c.appspot.com",
+      messagingSenderId: "175737949482",
+      appId: "1:175737949482:web:285fadc76f6ac72d1de253",
+      measurementId: "G-FLGG3FGKMG"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
+    <h1>Chess Board</h1>
     <div class="d-flex justify-content-center">
         <div class="custom-container">
             <div class="row1">
